@@ -40,8 +40,10 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0;
+  padding: 0 24px;
 }
 
 #profile {
@@ -61,12 +63,25 @@ body * {
   margin-top: 8px;
 }
 
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+  cursor: pointer;
+}
+
 #switch button {
   width: 32px;
   height: 32px;
   background: #fff var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 #switch span {
   width: 64px;
@@ -77,6 +92,11 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
 }
 
 ul {
